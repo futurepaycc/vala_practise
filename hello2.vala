@@ -11,6 +11,7 @@ public class Hello1Window : Window {
         });
         this.add(button1);
         this.set_default_size(800,600);
+        this.destroy.connect(Gtk.main_quit);
     }
 }
 

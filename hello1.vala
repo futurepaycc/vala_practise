@@ -6,6 +6,7 @@ public class Hello1Window : Window {
         var label = new Label ("Hello World");
         add (label);
         set_default_size(800,600);
+        destroy.connect(Gtk.main_quit);
     }
 }
 
