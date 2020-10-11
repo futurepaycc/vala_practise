@@ -11,3 +11,6 @@ executable('hello1', sources1, dependencies: dependencies)
 
 sources_hello2 = files('hello2.vala')
 executable('hello2', sources_hello2, dependencies: dependencies)
+
+sources_cairo1 = files('cairo1.vala')
+executable('cairo1', sources_cairo1, dependencies: dependencies)
