@@ -1,8 +1,8 @@
 ### single vala file test boilerplate
-just for quick dirty vala practise
+quick dirty practise for vala beginner
 
 ### why?
-vala-language-server donot serve this mode
+vala-language-server donot support this mode
 
 ### feature
 1. single file compile,every file can own main()
@@ -10,10 +10,10 @@ vala-language-server donot serve this mode
 3. debug with gdb
 
 ### requirment
-nix environment
-vala-language-server
-vala vscode plugin
-vala lib and requmirment
+* nix environment
+* vala-language-server
+* vala vscode plugin
+* vala lib and requmirment
 
 ### step
 1. add new vala file in workspaceRoot
@@ -21,13 +21,13 @@ vala lib and requmirment
 3. F5 compile,debug
 
 ### problem
-new file main and Gtk namespace show error
-solution: after F5, close and reopen
+* new file main() and 'Gtk' namespace show error
+* solution: after F5, close and reopen
 
 ### working way
 see: lauch.json、tasks.json, makefile、addFile.py
 
 ### refer:
-https://mesonbuild.com/Tutorial.html
-https://wiki.gnome.org/Projects/Vala/Documentation
-https://github.com/robertsanseries/template-for-vala-apps
+* https://mesonbuild.com/Tutorial.html
+* https://wiki.gnome.org/Projects/Vala/Documentation
+* https://github.com/robertsanseries/template-for-vala-apps
