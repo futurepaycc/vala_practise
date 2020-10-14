@@ -1,6 +1,6 @@
 /*  
 参考：
-https://github.com/GNOME/gobject-introspection/blob/master/tests/repository/gitestrepo.c
+https://github.com/GNOME/gobject-introspection/blob/master/tests/repository/gitestrepo.c (看来只能按interface进行枚举遍历，最好用c语言吧)
 https://valadoc.org/gobject-introspection-1.0/index.htm
 https://github.com/pavouk/lgi/blob/master/tools/dump-typelib.lua
 */
@@ -18,22 +18,17 @@ void main(string[] args){
     foreach(var item in searchList){
         print(item+"\n");
     }
-    //  print("hello\n");
-
     try{
         repo.require("Gio","2.0",GI.RepositoryLoadFlags.IREPOSITORY_LOAD_FLAG_LAZY);
 
-        var gio_base =  repo.find_by_name("Gio","File");
-        //  gio_base.
-        //  var interface_info = (GI.InterfaceInfo)gio_base.get_type();
-        //NOTE: 这里返回的只是一个枚举类型
-        var interface_info = gio_base.get_type();
-        //  GI.InterfaceInfo
-        //  interface_info.find()
-        //  var func = interface_info.find_vfunc("read_async");
-        //  print(func.get_name());
-        stdout.printf(interface_info.to_string()+"\n");
+        GI.BaseInfo gio_base =  repo.find_by_name("Gio","File");
+        GI.InterfaceInfo interface_info = (GI.InterfaceInfo)gio_base; //为什么这里不能用as 语法，只能强转？
+        var vfunc = interface_info.find_vfunc("read_async");
+        stdout.printf(vfunc.get_name() + "\n");
+        stdout.printf("参数长度: "+vfunc.get_n_args().to_string());
     }catch (Error e) {
         stderr.printf ("Could not load UI: %s\n", e.message);
     }
+
+    try {GI.Repository.dump("/usr/lib/girepository-1.0/Notify-0.7.typelib");} catch (Error e) {stderr.printf(e.message);}
 }
