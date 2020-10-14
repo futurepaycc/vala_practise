@@ -4,6 +4,7 @@ dependencies = [
     dependency('glib-2.0'),
     dependency('gobject-2.0'),
     dependency('gtk+-3.0'),
+    dependency('gobject-introspection-1.0'),
 ]
 
 sources1 = files('hello1.vala')
@@ -17,3 +18,6 @@ executable('cairo1', sources_cairo1, dependencies: dependencies)
 
 sources_glade1 = files('glade1.vala')
 executable('glade1', sources_glade1, dependencies: dependencies)
+
+sources_gi1 = files('gi1.vala')
+executable('gi1', sources_gi1, dependencies: dependencies)
