@@ -16,17 +16,24 @@ void main(string[] args){
 
     var searchList = GI.Repository.get_search_path().copy();
     foreach(var item in searchList){
-        print(item);
+        print(item+"\n");
     }
     //  print("hello\n");
 
-    repo.require("Gio","2.0",GI.RepositoryLoadFlags.IREPOSITORY_LOAD_FLAG_LAZY);
+    try{
+        repo.require("Gio","2.0",GI.RepositoryLoadFlags.IREPOSITORY_LOAD_FLAG_LAZY);
 
-    var gio_base =  repo.find_by_name("Gio","File");
-    //  gio_base.
-    var interface_info = (GI.InterfaceInfo)gio_base.get_type();
-    //  GI.InterfaceInfo
-    //  interface_info.find()
-    var func = interface_info.find_vfunc("read_async");
-    print(func.get_name());
+        var gio_base =  repo.find_by_name("Gio","File");
+        //  gio_base.
+        //  var interface_info = (GI.InterfaceInfo)gio_base.get_type();
+        //NOTE: 这里返回的只是一个枚举类型
+        var interface_info = gio_base.get_type();
+        //  GI.InterfaceInfo
+        //  interface_info.find()
+        //  var func = interface_info.find_vfunc("read_async");
+        //  print(func.get_name());
+        stdout.printf(interface_info.to_string()+"\n");
+    }catch (Error e) {
+        stderr.printf ("Could not load UI: %s\n", e.message);
+    }
 }
