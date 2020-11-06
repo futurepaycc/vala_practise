@@ -27,6 +27,10 @@ vala-language-server donot support this mode
 ### working way
 see: lauch.json、tasks.json, makefile、addFile.py
 
+### vala_code formatter
+uncrustify -c uncrustify.vala.cfg --replace --no-backup hello1.vala
+https://raw.githubusercontent.com/flplv/vala-uncrustify/master/uncrustify.vala.cfg
+
 ### refer:
 * https://mesonbuild.com/Tutorial.html
 * https://wiki.gnome.org/Projects/Vala/Documentation
