@@ -35,3 +35,7 @@ https://raw.githubusercontent.com/flplv/vala-uncrustify/master/uncrustify.vala.c
 * https://mesonbuild.com/Tutorial.html
 * https://wiki.gnome.org/Projects/Vala/Documentation
 * https://github.com/robertsanseries/template-for-vala-apps
+
+### interoperability
+https://stackoverflow.com/questions/57734487/how-do-i-compile-vala-to-c-and-call-functions-in-another-file-originally-writte (vala call c)
+https://stackoverflow.com/questions/16885242/vala-gui-and-logic-in-c (vala call c++)
