@@ -1,4 +1,4 @@
-using Gtk;
+using Gtk; //类似c++，可以省前缀
 
 public class Hello1Window : Window {
 
@@ -11,12 +11,13 @@ public class Hello1Window : Window {
         });
         this.add(button1);
         this.set_default_size(800,600);
-        this.destroy.connect(Gtk.main_quit);
+        this.destroy.connect(main_quit);
     }
 }
 
 void main (string[] args) {
-    Gtk.init (ref args);
+    //  Gtk.init
+    init (ref args);
 
     var win = new Hello1Window();
     win.show_all();
