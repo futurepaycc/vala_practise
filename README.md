@@ -19,6 +19,7 @@ vala-language-server donot support this mode
 1. add new vala file in workspaceRoot
 2. edit
 3. F5 compile,debug
+4. p varname
 
 ### problem
 * new file main() and 'Gtk' namespace show error

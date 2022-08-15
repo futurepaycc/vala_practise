@@ -5,6 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "gdb",
+            "request": "launch",
+            "name": "GDB",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "stopOnEntry": false
+        },
+        
+        {
+            "type": "lldb",
+            "name": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+
+        {
             "name": "hot",
             "type": "cppdbg",
             "request": "launch",

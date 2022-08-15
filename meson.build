@@ -25,3 +25,6 @@ executable('gi1', sources_gi1, dependencies: dependencies)
 
 sources_webkit1 = files('webkit1.vala')
 executable('webkit1', sources_webkit1, dependencies: dependencies)
+
+sources_readfile1 = files('readfile1.vala')
+executable('readfile1', sources_readfile1, dependencies: dependencies)

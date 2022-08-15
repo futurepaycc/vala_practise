@@ -17,8 +17,6 @@ executable('{new_source_basename}', sources_{new_source_basename}, dependencies:
             with open(build_file,'w') as wFile:
                 wFile.write(newContent)
 
-
-
 if __name__ == "__main__":
     # print(sys.argv)
     addFile(sys.argv[1])
